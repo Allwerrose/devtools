@@ -57,7 +57,9 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 - `feature/DVT-3` — задача #3: настройка Git и .gitignore
 - `feature/DVT-4` — задача #4: добавление бизнес-логики
 - `bugfix/login-error` — исправление бага в авторизации
-
+git checkout -b feature/DVT-4
+git push -u origin feature/DVT-4
+git branch -vv
 ### Правила:
 1. Каждая задача — отдельная ветка от `main`
 2. Название: `тип/номер-задачи-краткое-описание`
