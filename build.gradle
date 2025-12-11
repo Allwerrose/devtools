@@ -30,3 +30,6 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(24)
     } }
+application {
+    mainClass = 'ru.mentee.power.ProgressDemo'  // ← полное имя класса с main()
+}
