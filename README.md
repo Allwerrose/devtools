@@ -56,7 +56,6 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 
 - `master`  — основная ветка для релизов
 - `feature/DVT-3` — задача #3: настройка Git и .gitignore
-- `feature/DVT-4` — задача #4: добавление бизнес-логики
 - `bugfix/login-error` — исправление бага в авторизации
 
 ### Правила:
