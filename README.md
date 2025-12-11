@@ -63,3 +63,4 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 2. Название: `тип/номер-задачи-краткое-описание`
 3. Перед слиянием в `main` — код ревью и все тесты должны проходить
 4. Ветка удаляется после успешного слияния
+5. Перед push - git status clean 
