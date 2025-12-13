@@ -12,7 +12,7 @@ class MenteeProgressTest {
 
         String result = progress.summary();
 
-        assertThat(result).isEqualTo("Sprint 1 -> Алена: planned 8 h");
+        assertThat(result).isEqualTo("Sprint 2 -> Алена: planned 8 h");
     }
 
     @Test
