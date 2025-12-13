@@ -15,9 +15,9 @@ class ProgressLoopTest {
         // given - подготовка данных
         ProgressTracker tracker = new ProgressTracker();
         Mentee[] mentees = {
-                new Mentee("Алена", "Екатеринбург", "Backend", 13, 69),
-                new Mentee("Иван", "Москва", "Frontend", 1, 69),
-                new Mentee("Дима", "Сочи", "Full-stack", 30, 69)
+                new Mentee("Иван", "Екатеринбург", "Backend", 5, 12),
+                new Mentee("Мария", "Москва", "Frontend", 8, 12),
+                new Mentee("Петр", "Сочи", "Full-stack", 12, 12)
         };
 
         // when - выполнение действия
@@ -25,8 +25,8 @@ class ProgressLoopTest {
 
         // then - проверка результата с assertJ
         assertThat(result)
-                .contains("пройдено 44 из 207 уроков")
-                .contains("осталось 163 уроков");
+                .contains("пройдено 25 из 36 уроков")
+                .contains("осталось 11 уроков");
     }
 
     @Test
@@ -35,8 +35,8 @@ class ProgressLoopTest {
         // given
         ProgressTracker tracker = new ProgressTracker();
         Mentee[] mentees = {
-                new Mentee("Алена", "Екатеринбург", "Backend", 69, 69),
-                new Mentee("Иван", "Москва", "Frontend", 69, 69),
+                new Mentee("Иван", "Екатеринбург", "Backend", 12, 12),
+                new Mentee("Мария", "Москва", "Frontend", 12, 12),
 
         };
 
@@ -45,7 +45,7 @@ class ProgressLoopTest {
 
         // then
         assertThat(result)
-                .contains("пройдено 138 из 138º уроков")
+                .contains("пройдено 24 из 24 уроков")
                 .contains("осталось 0 уроков");
     }
 }

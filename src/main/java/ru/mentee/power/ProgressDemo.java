@@ -11,9 +11,9 @@ public class ProgressDemo {
         }
         ProgressTracker tracker = new ProgressTracker();
         Mentee[] mentees = {
-                new Mentee("Алена", "Екатеринбург", "Backend", 13, 69),
-                new Mentee("Иван", "Москва", "Frontend", 1, 69),
-                new Mentee("Дима", "Сочи", "Full-stack", 30, 69)
+                new Mentee("Иван", "Екатеринбург", "Backend", 5, 12),
+                new Mentee("Мария", "Москва", "Frontend", 8, 12),
+                new Mentee("Петр", "Сочи", "Full-stack", 12, 12)
         };
         String trackerProgress = tracker.calculateTotalProgress(mentees);
         System.out.println(trackerProgress);
