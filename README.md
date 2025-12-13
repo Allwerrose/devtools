@@ -57,7 +57,9 @@ https://mentee-power.xl.ru/learn/MCIneBj4KkyH-GIRCspFvA/theory
 - `master`  — основная ветка для релизов
 - `feature/DVT-3` — задача #3: настройка Git и .gitignore
 - `bugfix/login-error` — исправление бага в авторизации
-
+git checkout -b feature/DVT-4
+git push -u origin feature/DVT-4
+git branch -vv
 ### Правила:
 1. Каждая задача — отдельная ветка от `master`
 2. Название: `тип/номер-задачи-краткое-описание`
