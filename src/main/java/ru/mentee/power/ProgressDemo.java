@@ -23,7 +23,7 @@ public class ProgressDemo {
         };
         StudentList list = new StudentList();
         Student student = new Student("Анна", "Екатеринбург");
-        Student student1= new Student("Алена","Екатеринбург"); // инициализируйте поля Student
+        Student student1 = new Student("Алена", "Екатеринбург"); // инициализируйте поля Student
 
         list.addStudent(student);
         list.addStudent(student1);
