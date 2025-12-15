@@ -2,7 +2,7 @@
 
 Учебный проект для освоения современных Java-инструментов: **Gradle, JUnit 5 и AssertJ**.  
 Проект создан в рамках обучения на платформе Mentee School.
-[![DVT-8 Java CI](https://github.com/Allwerrose/devtools/actions/workflows/ci.yml/badge.svg)](https://github.com/Allwerrose/devtools/actions/workflows/ci.yml)
+[[DVT-8 Java CI](https://github.com/Allwerrose/devtools/actions/workflows/ci.yml/badge.svg)](https://github.com/Allwerrose/devtools/actions/workflows/ci.yml)
 
 ##  Quick Start 
 
