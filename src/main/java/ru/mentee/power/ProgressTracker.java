@@ -10,13 +10,11 @@ public class ProgressTracker {
         if (mentees.length == 0 || (mentees[index] == null)) {
             System.out.println("Список обучающихся пуст");
         } else {
-            if (mentees.length != 0 && !(mentees[index] == null)) {
-                while (index < mentees.length) {
-                    totalCompleted += mentees[index].completedLessons();
-                    totalTotal += mentees[index].totalLessons();
-                    index++;
-                    totalRemaining = totalTotal - totalCompleted;
-                }
+            while (index < mentees.length) {
+                totalCompleted += mentees[index].completedLessons();
+                totalTotal += mentees[index].totalLessons();
+                index++;
+                totalRemaining = totalTotal - totalCompleted;
             }
         }
         return String.format("суммарно пройдено %d из %d уроков, осталось %d уроков", totalCompleted, totalTotal, totalRemaining);
