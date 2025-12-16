@@ -4,7 +4,7 @@ package ru.mentee.power;
 import ru.mentee.power.devtools.student.Student;
 import ru.mentee.power.devtools.student.StudentList;
 
-import java.util.List;
+
 
 public class ProgressDemo {
     public static void main(String[] args) {

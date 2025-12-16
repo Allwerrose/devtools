@@ -3,8 +3,7 @@
 Учебный проект для освоения современных Java-инструментов: **Gradle, JUnit 5 и AssertJ**.  
 Проект создан в рамках обучения на платформе Mentee-power.
 
-(https://github.com/Allwerrose/devtools/actions/workflows/ci.yml/badge.svg)](https://github.com/Allwerrose/devtools/actions/workflows/ci.yml)
-
+[![DVT-8 Java CI](https://github.com/Allwerrose/devtools/actions/workflows/ci.yml/badge.svg)](https://github.com/Allwerrose/devtools/actions/workflows/ci.yml)
 ## Quick Start
 
 ### Требования:
@@ -15,7 +14,6 @@
 
 ### Команды терминала:
 
-```bash
 
 # 1. Клонирование (если проект в Git)
 
@@ -214,3 +212,30 @@ git branch -vv
 **Почему плохо:** Нет объяснения почему лучше, нет примера как переписать,
 неясно какую проблему это решает.
 
+## Результаты само-ревью DVT-9
+
+### Найденные проблемы
+
+#### 1. Отсутствие CI badge в README
+**Файл:** README.md (начало файла)
+**Проблема:** Нет бейджа со статуса сборки GitHub Actions (добавлена ссылка, не бейдж)
+**Почему важно:** CI badge показывает статус проекта сразу при открытии README —
+это стандарт для open-source проектов и упрощает мониторинг состояния сборки.
+**Исправление:** Добавить бейдж в начало README:
+
+![CI](https://github.com/[USERNAME]/devtools/actions/workflows/ci.yml/badge.svg)
+
+
+
+#### 2. Неиспользуемый импорт
+**Файл:** src/main/java/ru/mentee/power/devtools/Demo.java (строка 7)
+**Проблема:** Оставлен неиспользуемый импорт 
+**Почему важно:** Удаление неиспользуемых импортов улучшает читаемость кода, снижает риск ошибок, ускоряет сборку
+и поддерживает стандарты качества.
+**Исправление:** Удалить строку.
+
+#### 3. Дублированный код
+**Файл:** src/main/java/ru/mentee/power/ProgressTracker.java (строка 13)
+**Проблема:** Повторяющаяся проверка if.
+**Почему важно:** Усложняет код, повышает риск ошибок и снижает читаемость.
+**Исправление:** Удалить дублированный код. 
