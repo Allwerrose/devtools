@@ -1,26 +1,38 @@
 package ru.mentee.power.devtools.student;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.ArrayList;  // порядок импортов нарушен
 
+/**
+ * Добавляет студента в список, сортирует по городу.
+ */
 
 public class StudentList {
 
-    private List<Student> studentList = new ArrayList<>();
+  private final List<Student> studentList = new ArrayList<>();
 
-
-    public void addStudent(Student student) {
-        if (student != null)
-            studentList.add(student);
+  /**
+   * Добавляет студента в список, исключает пустые строки.
+   *
+   * @param student Объект студент.
+   */
+  public void addStudent(Student student) {
+    if (student != null) {
+      studentList.add(student);
     }
+  }
 
-
-    public List<Student> getStudentsFromSpecificCity(String city) {
-        return studentList.stream()
-                .filter(s -> s.city()
-                        .equals(city)).toList();
-    }
-
+  /**
+   * Сортирует студентов по названию города.
+   *
+   * @param city Информация о городе студента.
+   * @return список студентов из одного города
+   */
+  public List<Student> getStudentsFromSpecificCity(String city) {
+    return studentList.stream()
+            .filter(s -> s.city()
+                    .equals(city)).toList();
+  }
 
 }
 
