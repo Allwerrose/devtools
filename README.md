@@ -245,12 +245,11 @@ git branch -vv
 
 ### Запросы и источники
 
-| № | Запрос | Операторы | Официальный источник | Альтернатива | Статус | Дата проверки |
-|---|--------|-----------|----------------------|--------------|--------|---------------|
-| 1 |Lombok Gradle Short |site:search.maven.org "lombok" OR site:mvnrepository.com "lombok"
-|https://central.sonatype.com/artifact/org.projectlombok/lombok/1.18.42 | |200 OK | 17.12.25             |
-| 2 |Java Stream API документация |site:docs.oracle.com "stream api" intitle:api java 25 |             https://docs.oracle.com/en/database/other-databases/nosql-database/25.3/java-api/oracle/kv/pubsub/package-summary.html         | | 200 OK|17.12.25 |
-| 3 | горячие клавиши IntelliJ IDEA|site:www.jetbrains.com/help "keymap" "intellij idea" |             https://www.jetbrains.com/help/idea/settings-keymap.html#-d74rm5_4         | https://www.jetbrains.com/help/idea/mastering-keyboard-shortcuts.html|200 OK |17.12.25 |
+| № | Запрос | Операторы                                                         | Официальный источник | Альтернатива | Статус | Дата проверки |
+|---|--------|-------------------------------------------------------------------|----------------------|--------------|--------|---------------|
+| 1 |Lombok Gradle Short | site:search.maven.org "lombok" OR site:mvnrepository.com "lombok" |https://central.sonatype.com/artifact/org.projectlombok/lombok/1.18.42 | |200 OK | 17.12.25             |
+| 2 |Java Stream API документация | site:docs.oracle.com "stream api" intitle:api java 25             |             https://docs.oracle.com/en/database/other-databases/nosql-database/25.3/java-api/oracle/kv/pubsub/package-summary.html         | | 200 OK|17.12.25 |
+| 3 | горячие клавиши IntelliJ IDEA| site:www.jetbrains.com/help "keymap" "intellij idea"              |             https://www.jetbrains.com/help/idea/settings-keymap.html#-d74rm5_4         | https://www.jetbrains.com/help/idea/mastering-keyboard-shortcuts.html|200 OK |17.12.25 |
 
 ### AI-промпты и сравнение ассистентов
 
