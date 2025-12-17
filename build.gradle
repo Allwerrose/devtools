@@ -44,7 +44,7 @@ jacocoTestReport {
     }
 }
 
-// Настройка проверки покрытия (минимум 80%)
+// Настройка проверки покрытия (минимум 60%)
 jacocoTestCoverageVerification {
     dependsOn jacocoTestReport
     violationRules {
