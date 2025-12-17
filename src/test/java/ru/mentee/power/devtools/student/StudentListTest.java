@@ -73,6 +73,6 @@ class StudentListTest {
     studentList.addStudent(studentWithNullCity);
 
     assertThrows(NullPointerException.class, () ->
-      studentList.getStudentsFromSpecificCity("Екатеринбург"));
+        studentList.getStudentsFromSpecificCity("Екатеринбург"));
   }
 }
