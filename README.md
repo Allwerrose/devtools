@@ -5,7 +5,31 @@
 
 [![DVT-8 Java CI](https://github.com/Allwerrose/devtools/actions/workflows/ci.yml/badge.svg)](https://github.com/Allwerrose/devtools/actions/workflows/ci.yml)
 ## Quick Start
+## Технологический стек проекта
 
+### Языки и платформы
+- **Java 24** — основной язык разработки
+- **Gradle 9.1.0** — система сборки (через Gradle Wrapper)
+
+### Инструменты качества кода
+- **Checkstyle** — статический анализ стиля кода
+    - Конфигурация: `config/checkstyle/checkstyle.xml`
+    - Запуск: `./gradlew checkstyleMain`
+- **JUnit 5.10.0** — фреймворк тестирования
+    - Запуск: `./gradlew test`
+
+### CI/CD
+- **GitHub Actions** — автоматическая проверка PR
+    - Checkstyle на каждый коммит
+    - Тесты на каждый коммит
+    - Конфигурация: `.github/workflows/`
+
+### Правила кода
+- Стиль: Google Java Style Guide (через Checkstyle)
+- Коммиты: Conventional Commits (`feat:`, `fix:`, `docs:`)
+- Ветки: `feature/DVT-X` для задач, `master` — основная
+- Pull Request: обязателен для слияния в master
+- 
 ### Требования:
 
 - **Java 24** (или выше)
@@ -336,3 +360,117 @@ should...When....
 4. 
 **Сравнение:**
 QWEN- кратко и понятно. В Deepseek много воды.
+
+## Java-экосистема
+#### JDK — Java Development Kit
+**Определение:(EN)** Development environment for building applications using the Java programming language. Includes compiler (javac), archiver (jar), documentation generator (javadoc), and other tools.
+**(RU)** Среда разработки для создания приложений на языке программирования Java. Включает компилятор (javac), архиватор (jar), генератор документации (javadoc) и другие инструменты.
+**Контекст использования:** JDK необходим для компиляции Java-кода в байт-код и создания исполняемых JAR-файлов. Без JDK невозможно собрать Java-проект.
+**Пример:** После установки JDK выполняем `java -version` для проверки версии. В IntelliJ IDEA настраиваем Project SDK: File → Project Structure → Project → SDK → выбираем JDK 25.
+**Источник:** https://docs.oracle.com/en/java/javase/21/docs/
+#### JRE — Java Runtime Environment
+**Определение:(EN)** The Java SE Runtime Environment contains the Java virtual machine, runtime class libraries, and Java application launcher that are necessary to run programs written in the Java programming language.
+**(RU)** Среда выполнения Java SE содержит виртуальную машину Java, библиотеки классов времени выполнения и средство запуска приложений Java, необходимые для запуска программ, написанных на языке программирования Java.
+**Контекст использования:** Развёртывание и запуск Java‑приложений на пользовательских машинах;
+**Пример:** Пользователь устанавливает JRE, чтобы запустить десктопное приложение на Java (например, Minecraft или бухгалтерскую программу), не занимаясь компиляцией или разработкой.
+**Источник:** https://www.oracle.com/java/technologies/javase/jre8-readme.html
+#### JVM — Java Virtual Machine
+**Определение:(EN)**  is a virtual machine that enables a computer to run Java programs as well as programs written in other languages that are also compiled to Java bytecode.
+**(RU)** Это виртуальная машина, которая позволяет компьютеру запускать программы на Java, а также программы, написанные на других языках и также компилируемые в байт-код Java.
+**Контекст использования:** Выполнение программ, написанных на языках, компилируемых в байт‑код Java (Kotlin, Scala, Clojure и др.)
+**Пример:** При запуске `java -jar app.jar` JVM загружает классы, проверяет байт‑код, компилирует его в машинный код и исполняет метод `main()`
+**Источник:** https://stackoverflow.com/questions/77988195/java-how-jvm-works
+#### IDE — Integrated Development Environment
+**Определение:(EN)** is software that provides a relatively comprehensive set of features for software development.
+**(RU)** Программное обеспечение, объединяющее в едином интерфейсе набор инструментов для разработки ПО: редактор кода, средства автоматизации сборки, отладчик, компилятор/интерпретатор и другие функции.
+**Контекст использования:** Написание и редактирование исходного кода (с подсветкой синтаксиса, автодополнением, рефакторингом);
+**Пример:** Разработчик на Java использует **IntelliJ IDEA** для написания кода, сборки проекта через Maven, отладки с точками останова и отправки изменений в Git‑репозиторий — всё в одном интерфейсе.
+**Источник:** https://www.sciencedirect.com/topics/computer-science/integrated-development-environment
+#### SDK — Software Development Kit
+**Определение:(EN)** is a collection of software development tools in one installable package to develop a software.
+**(RU)** Это набор инструментов разработки программного обеспечения в одном устанавливаемом пакете для создания программного обеспечения.
+**Контекст использования:** SDK используются в ситуациях, когда разработчику необходимо интегрировать в своё приложение функциональность сторонней платформы, сервиса или устройства, не создавая её с нуля. Они предоставляют готовые "строительные блоки".
+**Пример:** Разработчик, использующий **Google Maps SDK** в приложении для доставки еды, не создаёт карты с нуля, а просто встраивает готовые инструменты — карту, поиск адресов и построение маршрутов — экономя годы работы.
+**Источник:** https://www.geeksforgeeks.org/software-engineering/what-is-software-development-kit-sdk/
+#### Gradle Wrapper — Gradle Wrapper
+**Определение:(EN)** **The Wrapper is a script** (called `gradlew` or `gradlew.bat`) that invokes a declared version of Gradle, downloading it beforehand if necessary.
+(RU) Wrapper — это скрипт (называемый gradlew или gradlew.bat), который запускает заявленную версию Gradle, предварительно загружая её при необходимости.
+**Контекст использования:** Используется, чтобы гарантировать, что все разработчики и системы CI/CD в проекте используют _одинаковую_ версию Gradle, избегая ошибок из-за различий в глобальных установках.
+**Пример:** Разработчик, запуская `./gradlew build`, автоматически скачивает и использует версию Gradle, указанную в проекте (например, 8.5), а не свою глобальную, что обеспечивает идентичную сборку у всей команды.
+**Источник:** https://docs.gradle.org/current/userguide/gradle_wrapper.html
+#### Build Tool — Build Tool
+**Определение:(EN)** They are programs that automate the creation of executable applications from source code.
+**(RU)** Это программы, которые автоматизируют создание исполняемых приложений из исходного кода.
+**Контекст использования:** Автоматизация рутинных задач сборки ПО: компиляция, управление зависимостями, упаковка.
+**Пример:** Вместо ручной компиляции десятков файлов разработчик запускает одну команду, которая делает всё автоматически.
+**Источник:** https://www.geeksforgeeks.org/java/what-is-a-build-tool/
+#### Repository — Repository (Git context)
+**Определение:(EN)**  A collection of refs together with an object database containing all objects which are reachable from the refs, possibly accompanied by meta data from one or more porcelains.
+(RU) Набор ссылок вместе с базой данных объектов, содержащей все объекты, доступные по ссылкам, возможно, с добавлением метаданных об одном или нескольких фарфоровых изделиях.
+**Контекст использования:** хранение исходного кода, управление версиями, совместная разработка ПО.
+**Пример:** GitHub‑репозиторий с кодом веб‑приложения, доступный для клонирования по URL.
+**Источник:** https://git-scm.com/docs/gitglossary
+#### Commit — Commit
+**Определение:(EN)** Record changes to the repository
+(RU) Запись изменений в репозиторий
+**Контекст использования:** Cохранение промежуточных состояний проекта, документирование правок, ветвление и слияние кода.
+**Пример:** Коммит с сообщением «Fix login button alignment» после исправления расположения кнопки на странице.
+**Источник:** https://git-scm.com/docs/git-commit
+#### Branch — Branch
+**Определение:(EN)**  List, create, or delete branches
+(RU) Список, создание или удаление ветвей.
+**Контекст использования:** Разработка новых фич, исправление багов, эксперименты без влияния на основную ветку (обычно `main`/`master`).
+**Пример:** Ветка`feature/user-profile`для реализации профиля пользователя, отделённая от основной ветки проекта.
+**Источник:** https://git-scm.com/docs/git-branch
+#### Pull Request — Pull Request
+**Определение:(EN)** are proposals to merge code changes into a project.
+(RU) это предложения по объединению изменений кода в проекте
+**Контекст использования:** согласование правок перед их интеграцией в основной код, коллективная проверка качества и безопасности изменений.
+**Пример:** PR с заголовком «Add dark mode» для слияния ветки `feature/dark-mode` в `main` с обзором изменений и комментариями ревьюеров.
+**Источник:** https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
+#### Code Review — Code Review
+**Определение:(EN)** is a process where one or more developers review code that another developer wrote.
+(RU) это процесс, в ходе которого один или несколько разработчиков проверяют код, написанный другим разработчиком.
+**Контекст использования:** При слиянии веток в репозитории (через PR/MR) для обеспечения качества кода перед деплоем.
+**Пример:** Разработчик создаёт Pull Request, коллеги оставляют комментарии о стиле кода и потенциальных ошибках.
+**Источник:** https://github.com/resources/articles/how-to-improve-code-with-code-reviews
+#### CI/CD — CI/CD
+**Определение:(EN)**  It's a set of practices and tools designed to improve the software development process by automating builds, testing, and deployment, enabling you to ship code changes faster and reliably.
+(RU) Это набор практик и инструментов, предназначенных для улучшения процесса разработки программного обеспечения путем автоматизации сборки, тестирования и развертывания, что позволяет быстрее и надежнее выпускать изменения кода.
+**Контекст использования:** В DevOps‑практиках для автоматизации сборки, тестирования и развёртывания приложений при каждом изменении кода.
+**Пример:** Настройка пайплайна в GitHub Actions, который автоматически тестирует и деплоит код при пуше в основную ветку.
+**Источник:** https://github.com/resources/articles/ci-cd
+#### Checkstyle — Checkstyle
+**Определение:(EN)** A development tool that automatically checks Java code against a set of coding standards and style rules.
+(RU) Инструмент разработки, автоматически проверяющий Java‑код на соответствие заданным стандартам кодирования и правилам оформления.
+**Контекст использования:** На этапе сборки проекта (в IDE или CI/CD‑пайплайне) для обеспечения единообразия стиля кода и соблюдения стандартов команды.
+**Пример:** Checkstyle выявляет нарушение: использование табуляции вместо пробелов или длину строки более 120 символов.
+**Источник:** https://checkstyle.sourceforge.io/
+#### Debug — Debug
+**Определение:(EN)** is the process of identifying and resolving ****errors**** or ****bugs**** in a software system.
+(RU) Это процесс выявления и устранения ошибок или багов в программной системе.
+**Контекст использования:** Во время разработки и тестирования ПО — в IDE с помощью отладчика или через логирование для поиска и исправления некорректного поведения программы.
+**Пример:** Разработчик ставит точку останова (breakpoint) в коде, пошагово выполняет программу и анализирует значения переменных для поиска причины сбоя.
+**Источник:** https://www.geeksforgeeks.org/software-engineering/software-engineering-debugging/
+#### Breakpoint — Breakpoint
+**Определение:(EN)** A deliberate stopping point in program execution that triggers a debugger to allow inspection of the program state.
+(RU) Преднамеренная точка остановки выполнения программы, вызывающая отладчик для анализа состояния программы.
+**Контекст использования:** В процессе отладки кода в IDE (IntelliJ IDEA, Visual Studio и др.) для проверки значений переменных, стека вызовов и логики выполнения.
+**Пример:** Разработчик устанавливает breakpoint на строке с вызовом функции, чтобы проверить передаваемые аргументы и результат её работы.
+**Источник:** https://www.jetbrains.com/help/idea/using-breakpoints.html
+
+**Вопрос 1: CI/CD**
+Задача: понять принципиальные различия между Continuous Integration (CI) и Continuous Delivery (CD), а также то, как они работают в связке.
+Контекст: Уроки на платформе
+Ограничения: читал общие описания на англоязычных ресурсах в ходе выполнения этого урока
+Ожидаемый результат: чёткое понимание:
+что именно делает CI (какие задачи решает);
+что добавляет CD (какие новые процессы появляются);
+  Критерии успеха: смогу на примере своего проекта описать, какие шаги относятся к CI, а какие — к CD; смогу объяснить коллеге разницу между ними в двух‑трёх предложениях.
+
+**Вопрос 2: Code Review**
+Задача: разобраться, какие критерии действительно важны при рецензировании кода, и как не скатиться в «придирки по стилю».
+Контекст: Есть понимание процесса, хотелось бы понять больше деталей
+Ограничения: нет
+Ожидаемый результат: список из 5–7 ключевых критериев, по которым нужно оценивать код в ревью, с примерами «хорошо/плохо».
+Критерии успеха: смогу за 10 минут провести ревью чужого PR, выделив 2–3 существенных замечания и 1–2 рекомендационных, без субъективных придирок; команда согласится, что замечания конструктивны.
