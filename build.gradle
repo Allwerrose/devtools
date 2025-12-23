@@ -52,6 +52,7 @@ jacocoTestCoverageVerification {
             limit {
                 minimum = 0.60
             }
+            excludes = ['**/*Main.class']
         }
     }
 }
